@@ -9,7 +9,7 @@ int getB();
 int getNum(int);
 void printRes(int, int);
 int reverseGetNum(int);
-int charToDigit(int, char);
+int charToDigit(char);
 void reversePrintNum(int, int);
 
 int main() {
@@ -97,7 +97,7 @@ int charToDigit(int a, char c) {
     return n;
 }
 
-char digitToChar(int b, int d) {
+char digitToChar(int d) {
     char c;
     if (d >= 10) {
         return 'a' + d - 10;
@@ -116,6 +116,6 @@ void reversePrintNum(int b, int num) {
     if (num > 0) {
         int d = num % b;
         reversePrintNum(b, num / b);
-        printf("%c", digitToChar(b, d));
+        printf("%c", digitToChar(d));
     }
 }
