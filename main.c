@@ -48,8 +48,8 @@ int getBase() {
 
 
 int getA() {
-    printf("Please enter the numbers base:\n");
     int a;
+    printf("Please enter the numbers base:\n");
     a = getBase();
     if (a == 0) {
         printf("Invalid input base\n");
@@ -59,8 +59,8 @@ int getA() {
 }
 
 int getB() {
-    printf("Please enter the desired base:\n");
     int a;
+    printf("Please enter the desired base:\n");
     a = getBase();
     if (a == 0) {
         printf("Invalid desired base\n");
