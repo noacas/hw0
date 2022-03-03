@@ -9,24 +9,27 @@ int getB();
 int getNum(int);
 void printRes(int, int);
 int reverseGetNum(int);
-int charToDigit(char);
+int charToDigit(int, char);
 void reversePrintNum(int, int);
+char digitToChar(int);
 
 int main() {
-    int a = getA();
+    int a, b, num;
+    a = getA();
     getchar();
-    int b = getB();
+    b = getB();
     getchar();
-    int num = getNum(a);
+    num = getNum(a);
     printRes(b, num);
     return 0;
 }
 int getBase() {
     int a;
-    char a1 = getchar();
+    char a1, a2;
+    a1 = getchar();
     if (isdigit(a1) == 1) {
         if (a1 == '1') {
-            char a2 = getchar();
+            a2 = getchar();
             if (isdigit(a2) == 1) {
                 a = 10 + a2 - '0';
                 if ((a >= 10) && (a <= 16)) {
@@ -46,7 +49,8 @@ int getBase() {
 
 int getA() {
     printf("Please enter the numbers base:\n");
-    int a = getBase();
+    int a;
+    a = getBase();
     if (a == 0) {
         printf("Invalid input base\n");
         exit(2);
@@ -56,7 +60,8 @@ int getA() {
 
 int getB() {
     printf("Please enter the desired base:\n");
-    int a = getBase();
+    int a;
+    a = getBase();
     if (a == 0) {
         printf("Invalid desired base\n");
         exit(2);
@@ -98,7 +103,6 @@ int charToDigit(int a, char c) {
 }
 
 char digitToChar(int d) {
-    char c;
     if (d >= 10) {
         return 'a' + d - 10;
     }
