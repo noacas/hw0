@@ -27,7 +27,6 @@ int getBase() {
     int a;
     char a1, a2;
     a1 = getchar();
-    printf("%c", a1);
     if (isdigit(a1) == 1) {
         if (a1 == '1') {
             a2 = getchar();
