@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 int getBase();
 int getA();
@@ -12,6 +11,7 @@ int charToDigit(int, char);
 void reversePrintNum(int, int);
 char digitToChar(int);
 int isCharDigit(char);
+int power(int, int);
 
 int main() {
     int a, b, num;
@@ -91,7 +91,7 @@ int reverseGetNum(int a)
     char c;
     if((c = getchar()) != '\n'){
         reverseGetNum(a);
-        sum += charToDigit(a, c) * pow(a, i);
+        sum += charToDigit(a, c) * power(a, i);
         i++;
     }
     return sum;
@@ -124,6 +124,7 @@ char digitToChar(int d) {
 void printRes(int b, int num) {
     printf("The result is: ");
     reversePrintNum(b, num);
+    printf("\n");
 }
 
 void reversePrintNum(int b, int num) {
@@ -132,4 +133,14 @@ void reversePrintNum(int b, int num) {
         reversePrintNum(b, num / b);
         printf("%c", digitToChar(d));
     }
+}
+
+int power(int base, int exponent)
+{
+    int result=1;
+    for (exponent; exponent>0; exponent--)
+    {
+        result = result * base;
+    }
+    return result;
 }
