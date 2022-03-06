@@ -11,7 +11,7 @@ int reverseGetNum(int);
 int charToDigit(int, char);
 void reversePrintNum(int, int);
 char digitToChar(int);
-int isdigit(char);
+int isCharDigit(char);
 
 int main() {
     int a, b, num;
@@ -22,7 +22,7 @@ int main() {
     return 0;
 }
 
-int isdigit(char c) {
+int isCharDigit(char c) {
     if ((c >= '0') && (c <= '9')) {
         return 1;
     }
@@ -37,9 +37,9 @@ int getBase() {
         return 0;
     }
     a2 = getchar();
-    if (isdigit(a1) == 1) {
+    if (isCharDigit(a1) == 1) {
         if (a1 == '1') {
-            if (isdigit(a2) == 1) {
+            if (isCharDigit(a2) == 1) {
                 a = 10 + a2 - '0';
                 a3 = getchar();
                 if ((a3 == '\n') && (a >= 10) && (a <= 16)) {
@@ -99,7 +99,7 @@ int reverseGetNum(int a)
 
 int charToDigit(int a, char c) {
     int n;
-    if (isdigit(c) == 1) {
+    if (isCharDigit(c) == 1) {
         n = c - '0';
     }
     else {
