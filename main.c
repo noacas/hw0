@@ -137,8 +137,8 @@ void reversePrintNum(int b, int num) {
 
 int power(int base, int exponent)
 {
-    int result=1;
-    for (int i = exponent; i>0; i--)
+    int i, result=1;
+    for (i = exponent; i>0; i--)
     {
         result = result * base;
     }
