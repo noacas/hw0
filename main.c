@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <math.h>
 
 int getBase();
@@ -12,33 +11,44 @@ int reverseGetNum(int);
 int charToDigit(int, char);
 void reversePrintNum(int, int);
 char digitToChar(int);
+int isdigit(char);
 
 int main() {
     int a, b, num;
     a = getA();
-    getchar();
     b = getB();
-    getchar();
     num = getNum(a);
     printRes(b, num);
     return 0;
 }
+
+int isdigit(char c) {
+    if ((c >= '0') && (c <= '9')) {
+        return 1;
+    }
+    return 0;
+}
+
 int getBase() {
     int a;
-    char a1, a2;
+    char a1, a2, a3;
     a1 = getchar();
+    if (a1 == '\n') {
+        return 0;
+    }
+    a2 = getchar();
     if (isdigit(a1) == 1) {
         if (a1 == '1') {
-            a2 = getchar();
             if (isdigit(a2) == 1) {
                 a = 10 + a2 - '0';
-                if ((a >= 10) && (a <= 16)) {
+                a3 = getchar();
+                if ((a3 == '\n') && (a >= 10) && (a <= 16)) {
                     return a;
                 }
             }
         } else {
             a = a1 - '0';
-            if ((a >= 2) && (a <= 9)) {
+            if ((a2 == '\n') && (a >= 2) && (a <= 9)) {
                 return a;
             }
         }
